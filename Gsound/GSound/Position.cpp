@@ -4,7 +4,7 @@
 Position::Position(void)
 {
 }
-Position::Position(int x, int y, int z)
+Position::Position(double x, double y, double z)
 {
 	this->x = x;
 	this->y = y;
@@ -22,7 +22,7 @@ Position::~Position(void)
 
 double Position::distanceTo(Position* position)
 {
-	double a = pow( double(this->x - position->x) ,2);
-	double b = pow( double(this->y - position->y) ,2);
+	double a = pow( this->x - position->x ,2);
+	double b = pow( this->y - position->y ,2);
 	return sqrt(a + b);
 }

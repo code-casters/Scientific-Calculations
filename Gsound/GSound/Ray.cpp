@@ -23,7 +23,7 @@ Sel_Intersect * Ray::Intersect(Scene * scene)
 	{
 		Position * position = Chk_Intersect(scene->walls[i]);
 		if (position != NULL ){
-			int distance = this->start->distanceTo(position);
+			double distance = this->start->distanceTo(position);
 			if(first){
 				detectIntersect = new Sel_Intersect(scene->walls[i],position,distance);
 				first = !first;
@@ -46,8 +46,21 @@ Position* Ray:: Chk_Intersect(Wall * wall){
 	double m1 = MyMath::calculateM(this->start->x,this->start->y,this->end->x,this->end->y);
 	double m2 = MyMath::calculateM(wall->start->x,wall->start->y,wall->end->x,wall->end->y);
 	float x = 0 , y = 0;
-	MyMath::commonSolution(m1,-1,this->start->y-(m1*this->start->x),m2,-1,wall->start->y-(m2*wall->start->x),x,y);
-	if(x <= max(wall->start->x,wall->end->x) && x >= min(wall->start->x,wall->end->x))
+	if( m1 == m2 )
+		return NULL;
+	else if (abs(m1) == std::numeric_limits<float>::infinity())
+	{
+		x = this->start->x ;
+		y = (m2 * x) + (wall->start->y) -(m2*wall->start->x);
+	}
+	else if (abs(m2) == std::numeric_limits<float>::infinity())
+	{
+		x = wall->start->x ;
+		y = (m1 * x) + (this->start->y) -(m1*this->start->x);
+	}
+	else 
+		MyMath::commonSolution(m1,-1,this->start->y-(m1*this->start->x),m2,-1,wall->start->y-(m2*wall->start->x),x,y);
+	if(x <= max(wall->start->x,wall->end->x) && x >= min(wall->start->x,wall->end->x) && x > this->start->x)
 		return new Position(x,y,0);
 	else
 		return NULL;

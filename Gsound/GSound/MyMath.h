@@ -5,9 +5,9 @@ class MyMath
 public:
 	inline  static void  commonSolution(float a1,float b1,float c1,float a2 , float b2,float c2,float& x,float& y){
 		if ((MyMath::calculateM(a1,b1))==(MyMath::calculateM(a2,b2))){
-			cout<<"error ! same m :3";
+			cout<<"error ! same m :3 ";
 		}
-		else
+		else		
 		{
 			/*x = (c*e-b*f)/(a*e-b*d);
 			y = (a*f-c*d)/(a*e-b*d); */	
@@ -23,7 +23,7 @@ public:
 }
 inline  static double  calculateM(int x1, int y1, int x2, int y2)
 {
-	return  (y1-y2)/double(x1-x2);
+		return  (y1-y2)/double(x1-x2);
 }
 
 inline  static double  calculateM(float a, float b ) 

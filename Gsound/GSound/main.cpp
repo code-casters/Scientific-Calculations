@@ -5,16 +5,19 @@ using namespace std;
 #include "Room.h"
 #include "Ray.h"
 #include "MyMath.h"
+#include "Scene.h"
 using namespace std;
 void main (){
 	 //SoundFile soundfile();
 	 //Source source();
-	/*Ray* raytest = new Ray(new Position(-4,-1,0), new Position(-2,-2,0), 2, 4); 
-	Position t = raytest->reflectRay(new Wall(new Position(-2,-2,0), new Position(-3,-3,0)) );
-	cout<< t.x <<" "<< t.y<<endl ;*/
-	cout<<MyMath::calculateM(-2,1,3,4);
-	float x ,y;
-	MyMath::commonSolution(3,-2,7,3,-2,4,x,y);
-	cout<<x<<endl;
-	cout<<y<<endl;
+	Ray* raytest = new Ray(new Position(1,1,0), new Position(2,2,0), 2, 4); 
+	//Position* t = raytest->Chk_Intersect(new Wall(new Position(5,1,0), new Position(5,4,0)) );
+	Wall* wall1 = new Wall(new Position(2,4,0), new Position(1,4,0));
+	Wall* wall2 = new Wall(new Position(5,1,0), new Position(5,4,0));
+	Wall* wall3 = new Wall(new Position(-1,-2,0), new Position(-2,-1,0));
+	Wall* wall4 = new Wall(new Position(-3,3,0), new Position(-2,4,0));
+	Scene* scene = new Scene(wall1,wall2,wall3,wall4);
+	Sel_Intersect* t = raytest->Intersect(scene);
+	cout<< t->position->x <<" "<< t->position->y<<endl ;
+
 }

@@ -3,10 +3,10 @@ class Position
 {
 public:
 	Position(void);
-	Position(int, int, int);
+	Position(double, double, double);
 	Position(const Position*  );
 	~Position(void);
 	double distanceTo(Position* position);
-	int x,y,z;
+	double x,y,z;
 };
 
