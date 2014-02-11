@@ -11,10 +11,10 @@ public:
 	Position * start;
 	Position * end;
 	int weigtht;
-	int length;
+	double length;
 	//bool Detect_Object();
 	//Position * ReflectRay(Wall *,double);
-	Position* reflectRay(Wall *,Position);
+	Position* reflectRay(Wall *,Position*);
 	Sel_Intersect* Intersect(Scene*);
 	void Propagate (Scene*, int);
 	Position* Chk_Intersect(Wall*);

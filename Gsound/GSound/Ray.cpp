@@ -60,29 +60,44 @@ Position* Ray:: Chk_Intersect(Wall * wall){
 	}
 	else 
 		MyMath::commonSolution(m1,-1,this->start->y-(m1*this->start->x),m2,-1,wall->start->y-(m2*wall->start->x),x,y);
-	if(x <= max(wall->start->x,wall->end->x) && x >= min(wall->start->x,wall->end->x) && x > this->start->x)
-		return new Position(x,y,0);
+	if(x <= max(wall->start->x,wall->end->x) && x >= min(wall->start->x,wall->end->x) )
+	{
+		if (this->end->x > this->start->x && x > this->start->x )
+			return new Position(x,y,0);
+		else if (this->end->x < this->start->x && x < this->start->x )
+			return new Position(x,y,0);
+		else
+			return NULL;
+	}
 	else
 		return NULL;
 }
 
-Position* Ray::reflectRay(Wall* wall,Position position)
+Position* Ray::reflectRay(Wall* wall,Position* position)
 {
 	Vector2f L(this->end->x - this->start->x, this->end->y - this->start->y);
 	Vector2f N(wall->end->x - wall->start->x, wall->end->y - wall->start->y);
 	Vector2f C = L.projectOn(N);
 	Vector2f R = (float)2*C - L ; 
-	return new Position(R.x + wall->start->x, R.y + wall->start->y, 0);
+	return new Position(R.x + position->x, R.y + position->y, 0);
 }
 
 void Ray::Propagate (Scene* scene,int depth){
-	if (depth<2){
+	if ((depth<5)&&(this->weigtht > 0)){
 		Sel_Intersect * sel_intersect = this->Intersect(scene);		
 		Position * endPoint = reflectRay(sel_intersect->wall,sel_intersect->position);
-		Ray * ray = new Ray ( new Position(sel_intersect->position),endPoint,this->weigtht-sel_intersect->wall->attenuation,this->length);
 		this->end = sel_intersect->position ;
+		this->length += (new Vector2f(this->end->x - this->start->x , this->end->y - this->start->y))->getMagnitude();
+		Ray * ray = new Ray ( new Position(sel_intersect->position),endPoint,this->weigtht-sel_intersect->wall->attenuation,this->length);		
 		scene->rays[scene->i] = ray;
-		scene->rays[scene->i++]->Propagate(scene,++depth);
+		scene->i++;
+		scene->rays[scene->i-1]->Propagate(scene,++depth);
+	}
+	else 
+	{
+		Sel_Intersect * sel_intersect = this->Intersect(scene);
+		this->end = sel_intersect->position;
+		this->length += (new Vector2f(this->end->x - this->start->x , this->end->y - this->start->y))->getMagnitude();
 	}
 }
 

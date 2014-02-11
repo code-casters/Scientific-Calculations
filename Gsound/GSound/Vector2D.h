@@ -115,7 +115,7 @@ class Vector2D
 			  */
 			inline T getMagnitude() const
 			{
-				return math::sqrt( x*x + y*y );
+				return sqrt( x*x + y*y );
 			}
 			
 			
