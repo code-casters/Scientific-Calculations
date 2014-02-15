@@ -1,22 +1,19 @@
-﻿Build started 2/11/2014 8:55:40 PM.
+﻿Build started 2/15/2014 5:04:19 PM.
      1>Project "C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\GSound\GSound.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Ray.cpp
-         Ray.cpp
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(46): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(47): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(53): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(54): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(58): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(59): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(78): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(79): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(90): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(91): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\ray.cpp(100): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Lesson2.cpp
+         Lesson2.cpp
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(101): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(102): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(103): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(104): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(112): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(113): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(409): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\molham\documents\github\scientific-calculations\gsound\gsound\lesson2.cpp(410): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.lib" /MACHINE:X86 Debug\Listner.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.exe" /INCREMENTAL /NOLOGO opengl32.lib glu32.lib glaux.lib odbc32.lib odbccp32.lib OPENAL32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.lib" /MACHINE:X86 /SAFESEH:NO Debug\Lesson2.obj
+         Debug\Listner.obj
          Debug\main.obj
          Debug\Position.obj
          Debug\Ray.obj
@@ -26,9 +23,10 @@
          Debug\SoundFile.obj
          Debug\Source.obj
          Debug\Wall.obj
+         Debug\WaveFile.obj
          GSound.vcxproj -> C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\Debug\GSound.exe
      1>Done Building Project "C:\Users\Molham\Documents\GitHub\Scientific-Calculations\GSound\GSound\GSound.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.49
+Time Elapsed 00:00:03.86

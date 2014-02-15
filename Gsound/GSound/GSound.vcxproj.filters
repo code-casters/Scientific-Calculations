@@ -48,6 +48,9 @@
     <ClInclude Include="MyMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="WaveFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -78,6 +81,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="solver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lesson2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

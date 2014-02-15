@@ -13,7 +13,7 @@ public:
 	Scene(Wall*,Wall*,Wall*,Wall*);
 	Listner listner;
 	Source source;
-	Ray* rays[30];
+	Ray* rays[45];
 	int i;
 };
 

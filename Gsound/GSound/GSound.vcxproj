@@ -22,8 +22,10 @@
     <ClInclude Include="SoundFile.h" />
     <ClInclude Include="Source.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="WaveFile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Lesson2.cpp" />
     <ClCompile Include="Listner.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Position.cpp" />
@@ -34,6 +36,7 @@
     <ClCompile Include="SoundFile.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="WaveFile.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{95982BDF-B4B4-493C-AB0A-4B1459918443}</ProjectGuid>
@@ -45,7 +48,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -79,8 +82,11 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glaux.lib;odbc32.lib;odbccp32.lib;OPENAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

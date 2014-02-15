@@ -66,6 +66,10 @@ Position* Ray:: Chk_Intersect(Wall * wall){
 			return new Position(x,y,0);
 		else if (this->end->x < this->start->x && x < this->start->x )
 			return new Position(x,y,0);
+		else if (this->end->y > this->start->y && y > this->start->y )
+			return new Position(x,y,0);
+		else if (this->end->y < this->start->y && y < this->start->y )
+			return new Position(x,y,0);
 		else
 			return NULL;
 	}
@@ -83,7 +87,7 @@ Position* Ray::reflectRay(Wall* wall,Position* position)
 }
 
 void Ray::Propagate (Scene* scene,int depth){
-	if ((depth<5)&&(this->weigtht > 0)){
+	if ((depth<3)&&(this->weigtht > 0)){
 		Sel_Intersect * sel_intersect = this->Intersect(scene);		
 		Position * endPoint = reflectRay(sel_intersect->wall,sel_intersect->position);
 		this->end = sel_intersect->position ;
