@@ -105,6 +105,14 @@ void Ray::Propagate (Scene* scene,int depth){
 	}
 }
 
+float Ray::getDistanceToPoint(Position* listnerPos)
+{
+	Vector2f thisVec(this->end->x - this->start->x,this->end->y - this->start->y);
+	Vector2f listnerPosVec(this->end->x - this->start->x,this->end->y - this->start->y);
+	Vector2f projectedPoint = listnerPosVec.projectOn(thisVec);
+	return projectedPoint.getDistanceTo(listnerPosVec);
+}
+
 Ray::~Ray(void)
 {
 }

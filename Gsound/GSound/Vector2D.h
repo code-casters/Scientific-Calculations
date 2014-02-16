@@ -232,7 +232,7 @@ class Vector2D
 				T minusX = vector.x - x;
 				T minusY = vector.y - y;
 				
-				return math::sqrt( minusX*minusX + minusY*minusY );
+				return sqrt( minusX*minusX + minusY*minusY );
 			}
 			
 			
