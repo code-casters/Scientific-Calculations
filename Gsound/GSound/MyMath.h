@@ -21,7 +21,7 @@ public:
 				y = ((-(Ta1*x))+(-Tc1))/b1;
 		}
 }
-inline  static double  calculateM(int x1, int y1, int x2, int y2)
+inline  static double  calculateM(double x1, double y1, double x2, double y2)
 {
 		return  (y1-y2)/double(x1-x2);
 }

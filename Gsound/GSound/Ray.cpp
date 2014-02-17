@@ -19,9 +19,14 @@ Sel_Intersect * Ray::Intersect(Scene * scene)
 	bool first = true;
 	//Sel_Intersect  * Vec_Intersect [4];
 	Sel_Intersect  * detectIntersect = NULL;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 6; i++)
 	{
 		Position * position = Chk_Intersect(scene->walls[i]);
+		if(position != NULL  && ( position->x > max(scene->walls[i]->start->x,scene->walls[i]->end->x) || position->x < min(scene->walls[i]->start->x,scene->walls[i]->end->x) ) )
+			continue;
+		else if(scene->walls[i]->start->x == scene->walls[i]->end->x)
+				if(position != NULL  && ( position->y > max(scene->walls[i]->start->y,scene->walls[i]->end->y) || position->y < min(scene->walls[i]->start->y,scene->walls[i]->end->y) ) )
+					continue;
 		if (position != NULL ){
 			double distance = this->start->distanceTo(position);
 			if(first){
@@ -101,15 +106,17 @@ void Ray::Propagate (Scene* scene,int depth){
 	{
 		Sel_Intersect * sel_intersect = this->Intersect(scene);
 		this->end = sel_intersect->position;
-		this->length += (new Vector2f(this->end->x - this->start->x , this->end->y - this->start->y))->getMagnitude();
+		//this->length += (new Vector2f(this->end->x - this->start->x , this->end->y - this->start->y))->getMagnitude();
 	}
 }
 
-float Ray::getDistanceToPoint(Position* listnerPos)
+float Ray::getDistanceToPoint(Position* listnerPos, Position* Projected )
 {
 	Vector2f thisVec(this->end->x - this->start->x,this->end->y - this->start->y);
-	Vector2f listnerPosVec(this->end->x - this->start->x,this->end->y - this->start->y);
+	Vector2f listnerPosVec(listnerPos->x - this->start->x,listnerPos->y - this->start->y);
 	Vector2f projectedPoint = listnerPosVec.projectOn(thisVec);
+	Projected->x = projectedPoint.x;
+	Projected->y = projectedPoint.y;
 	return projectedPoint.getDistanceTo(listnerPosVec);
 }
 

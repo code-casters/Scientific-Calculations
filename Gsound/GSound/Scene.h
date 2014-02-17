@@ -9,11 +9,11 @@ class Scene
 public:
 	Scene(void);
 	~Scene(void);
-	Wall* walls[4];
-	Scene(Wall*,Wall*,Wall*,Wall*);
-	Listner listner;
+	Wall* walls[6];
+	Scene(Wall*,Wall*,Wall*,Wall*,Wall*,Wall*);
+	Listner* listner;
 	Source source;
-	Ray* rays[45];
+	Ray* rays[200];
 	int i;
 };
 

@@ -17,5 +17,5 @@ public:
 	Sel_Intersect* Intersect(Scene*);
 	void Propagate (Scene*, int);
 	Position* Chk_Intersect(Wall*);
-	float getDistanceToPoint(Position*);
+	float getDistanceToPoint(Position*, Position*);
 };

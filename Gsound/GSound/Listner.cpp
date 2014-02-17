@@ -4,8 +4,13 @@ Listner::Listner(void)
 {
 }
 
-Listner::Listner(int x, int y, int z)
+Listner::Listner(float x, float y, float z)
 {
+	this->position = new Position(x,y,z);
+}
+
+void Listner::setPosition(float x, float y, float z){
+
 	this->position->x = x;
 	this->position->y = y;
 	this->position->z = z;

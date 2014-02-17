@@ -4,8 +4,9 @@ class Listner
 {
 public:
 	Listner(void);
-	Listner(int, int, int);
+	Listner(float, float, float);
 	Listner(Position* );
+	void setPosition(float, float, float);
 	~Listner(void);
 	Position * position;
 };
